@@ -1,0 +1,11 @@
+.hero {
+    min-height: 100vh;
+    background: url("../../assets/hero.jpg") center/cover no-repeat;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: calc(100vh/6);
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+

@@ -2,6 +2,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
@@ -30,4 +37,13 @@ img {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+:root {
+  --color-background: rgb(244, 246, 244);
+  --color-gray: #D2D0CA;
+  --color-bg-dark: #b08968;
+  --color-text: #211D1A;
+  --transition: all 0.6s linear;
+  --transition-long: all 2s linear;
 }
