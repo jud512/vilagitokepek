@@ -5,26 +5,33 @@
     text-align: center;
     padding: 2rem 1rem;
     width: 100vw;
+  
+    // background-color: #3f273f;
+    // min-height: 100vh;
+    opacity: 0.9;
 
 }
 
 .banner h1,
 .banner h2 {
     color: #eee;
-    text-shadow: 5px 3px #333;
+    // text-shadow: 5px 3px #333;
+    font-family: $font-banner;
 }
 
 .banner h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: 3px;
     /* text-shadow: 5px 3px #333; */
+   
 }
 
 .banner h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     letter-spacing: 2px;
+    
 }
 
 .banner p {
@@ -36,15 +43,18 @@
     margin-top: 3rem;
     border-radius: 5px;
     border: #eee solid 2px;
-    text-shadow: 5px 3px #333;
-    background-color: rgba(33, 33, 33, 0.5);
-    font-size: 0.9rem;
+    // text-shadow: 5px 3px #333;
+    background-color: transparent;
+    font-size: 1rem;
     transition: var(--transition);
     font-weight: 600;
     letter-spacing: 2px;
+    font-family: $font-banner;
 }
 
 .banner p:hover {
-    background-color: transparent;
+    // background-color: #d79233;
+    // background-color: #ff531f;
+    background-color: $color-footer-background;
     transition: var(--transition);
 }

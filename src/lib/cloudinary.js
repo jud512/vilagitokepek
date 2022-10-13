@@ -22,11 +22,12 @@ export async function search(options={}) {
 export function mapImageResources(resources){
     
     return resources.map(resource => {
-        const { width, height, folder } = resource;
+        const { width, height, folder, filename } = resource;
         return {
             id: resource.asset_id,
             title: resource.public_id,
             image: resource.secure_url,
+            filename,
             folder,
             width,
             height

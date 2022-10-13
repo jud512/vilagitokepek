@@ -1,12 +1,13 @@
 @import "@styles/settings/__settings";
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  
 }
 
 html,
@@ -15,6 +16,7 @@ body {
   margin: 0;
   font-family: $font-family;
   font-weight: $font-weight-regular;
+  background-color: $color-background;
 }
 
 a {

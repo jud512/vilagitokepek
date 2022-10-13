@@ -13,7 +13,7 @@ export const data = [
         text: 'Világító faliképek galériája. Egyedi megrendelések és készletről, online megvásárolható képek.'
     },
     {
-        id: 2, 
+        id: 'Ilyen volt ilyen lett', 
         img: img2,
         topic: 'ilyenvoltilyenlett',
         title: 'Ilyen volt - ilyen lett',

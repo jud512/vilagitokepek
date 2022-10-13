@@ -1,12 +1,19 @@
 @import "@styles/settings/__settings";
 
+.mainContainer {
+  // background-color: #FBDAC6;
+  background-color: $color-background;
+}
+
 .header {
   font-size: 2em;
 }
 .foldertitle{
   
-  font-size: 1.5rem;
-  color: var(--color-text);
+  font-size: 2rem;
+  color: $color-button-all;
+  font-family: $font-banner;
+  font-weight: 700;
   margin: 2rem 0;
 }
 
@@ -47,13 +54,16 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 0.2em;
 }
 
 .imageTitle {
-  font-size: 1em;
-  margin: .4em 0 0;
+  font-size: 0.8em;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  // margin: .4em 0 0;
+  
 }
 
 .imageImage {
@@ -65,13 +75,16 @@
     display: block;
     margin: auto;
     position: relative;
+   
 
 }
 
 
 .imageContainer {
-  border: 1px solid gray;  
+  border: 2px solid $color-button-all;  
   height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .imageContainer:hover {

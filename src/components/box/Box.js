@@ -16,7 +16,7 @@ const Box = ({id, img, topic, title, text}) => {
                 <p>{text}</p>
             </div>
             <div className={styles.btncontainer}>
-                <a className={styles.btnlink} href="#"><p className={styles.btnmain}>Tovább a képekhez</p></a>
+                <a className={styles.btnlink} href={'#' + id}><p className={styles.btnmain}>Tovább a képekhez</p></a>
           </div>                     
         </div>
         

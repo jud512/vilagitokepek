@@ -29,7 +29,7 @@ export default function Home({images: defaultImages, nextCursor: defaultNextCurs
         <meta name="description" content="All of my cool images." />
       </Head>
 
-      <>
+      <div div className={styles.mainContainer}>
         
         <Hero>  
             <div className={styles.logo}>
@@ -43,9 +43,10 @@ export default function Home({images: defaultImages, nextCursor: defaultNextCurs
           
             <>
               {folders.map(folder => {
+                console.log(folder);
                 return (  
-                  <div key={folder.path} >
-                    <h3 className={styles.foldertitle}>{folder.name}</h3>
+                  <div key={folder.path} id={folder.path}>
+                    <h3  className={styles.foldertitle}>{folder.name}</h3>
                     
                     <ul className={styles.images}>
                   {
@@ -58,7 +59,7 @@ export default function Home({images: defaultImages, nextCursor: defaultNextCurs
                               <Image layout="fill" objectFit='cover' src={image.image} alt="" />
                             </div>
                             <h3 className={styles.imageTitle}>
-                              {/* { image.title } */}
+                              { image.filename }
                             </h3>
                           </a>
                         </li>
@@ -75,7 +76,7 @@ export default function Home({images: defaultImages, nextCursor: defaultNextCurs
             
         
         </Container>
-      </>
+      </div>
       <Footer></Footer>
     </>
   )
