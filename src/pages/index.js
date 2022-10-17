@@ -14,12 +14,25 @@ import Topics from '@components/topics/Topics';
 import { search, mapImageResources, getFolders } from '@lib/cloudinary';
 import {data} from '../data/data-topics' //topics for images
 import Footer from '@components/Footer';
+import Modal from '@components/modal/Modal';
 
 export default function Home({images: defaultImages, nextCursor: defaultNextCursor, folders}) {
   const [images, setImages] = useState(defaultImages);
   const [nextCursor, setNextCursor] = useState(defaultNextCursor);
-  
 
+  //image-gallery
+  const [clickedImg, setClickedImg] = useState(null);
+  const [currentFolder, setCurrentFolder] = useState(null);
+
+  const handleClickImage = (image, folder) => {
+    setCurrentFolder(folder);
+    setClickedImg(image);
+
+  } 
+
+  useEffect(() => {
+     console.log(clickedImg?.width, clickedImg?.height, currentFolder);
+  }, [currentFolder, clickedImg])
   
   return (
     <>
@@ -43,7 +56,7 @@ export default function Home({images: defaultImages, nextCursor: defaultNextCurs
           
             <>
               {folders.map(folder => {
-                console.log(folder);
+                // console.log(folder);
                 return (  
                   <div key={folder.path} id={folder.path}>
                     <h3  className={styles.foldertitle}>{folder.name}</h3>
@@ -53,7 +66,8 @@ export default function Home({images: defaultImages, nextCursor: defaultNextCurs
                     images.filter(image => image.folder === folder.name).map(image => {
                       return (
                         
-                        <li key={image.id} className={styles.imageContainer}>
+                        <li key={image.id} className={styles.imageContainer} onClick={ () => handleClickImage(image, image.folder)}>
+                         
                           <a href={image.link} rel="noreferrer">
                             <div className={styles.imageImage}>
                               <Image layout="fill" objectFit='cover' src={image.image} alt="" />
@@ -71,13 +85,21 @@ export default function Home({images: defaultImages, nextCursor: defaultNextCurs
                   </div>
                 )
               })}
-            </>
-
-            
+            </>            
         
         </Container>
       </div>
       <Footer></Footer>
+      {clickedImg && (
+        <Modal 
+          images={images.filter(image => 
+            image.folder === currentFolder
+          )}
+          clickedImg={clickedImg}
+          setClickedImg={setClickedImg}
+        />
+      )}
+      
     </>
   )
 }

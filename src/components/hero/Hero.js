@@ -3,7 +3,7 @@ import styles from './Hero.module.scss'
 
 const Hero = ({children}) => {
   return (
-    <header className={styles.hero}>
+    <header className={styles.hero} >
         {children}
     </header>
   )

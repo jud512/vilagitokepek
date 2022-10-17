@@ -6,7 +6,7 @@ const Banner = () => {
     <div className={styles.banner}>
         <h2>világító faliképek, kisbútorok, dísztárgyak</h2>
         <h1>Üdvözöllek műhelyemben!</h1>
-        <a href="#topics"><p>Munkáim</p></a> 
+        {/* <a href="#topics"><p>Munkáim</p></a>  */}
     </div>
   )
 }

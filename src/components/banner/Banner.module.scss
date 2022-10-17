@@ -20,18 +20,23 @@
 }
 
 .banner h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     letter-spacing: 3px;
     /* text-shadow: 5px 3px #333; */
-   
+   color: #946fa7;
+   letter-spacing: 10px;
+   font-weight: 100;
+   font-family: $font-banner-second-row;
 }
 
 .banner h2 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
+    font-weight: 100;
     margin-bottom: 6rem;
-    letter-spacing: 2px;
-    
+    letter-spacing: 6px;
+    font-family: $font-banner-first-row;
+    color: rgb(189, 145, 49);
 }
 
 .banner p {
@@ -55,6 +60,6 @@
 .banner p:hover {
     // background-color: #d79233;
     // background-color: #ff531f;
-    background-color: $color-footer-background;
+    background-color: rgb(189, 145, 49);
     transition: var(--transition);
 }
