@@ -7,11 +7,7 @@ import Image from 'next/image'
 
 
 const Banner = () => {
-  const changeBackground = () => {
-    const element = document.getElementById('banner');
-    console.log(element);
-    ReactDOM.findDOMNode(element).style.background = 'linear-gradient(rgba(7, 5, 1, 0.7), rgba(15, 10, 2, 0.7)), url("../../assets/hero_v2.jpg") center/cover no-repeat';
-  }
+  
 
   return (
     <div className={styles.banner} id="banner">
