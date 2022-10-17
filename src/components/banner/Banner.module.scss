@@ -20,23 +20,28 @@
 }
 
 .banner h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     letter-spacing: 3px;
     /* text-shadow: 5px 3px #333; */
-   color: #946fa7;
+//    color: #946fa7;
+   color: white;
    letter-spacing: 10px;
    font-weight: 100;
    font-family: $font-banner-second-row;
+   margin-top: 10rem;
+   
 }
 
 .banner h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
     font-weight: 100;
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     letter-spacing: 6px;
     font-family: $font-banner-first-row;
-    color: rgb(189, 145, 49);
+    // color: rgb(189, 145, 49);
+    color:white;
 }
 
 .banner p {
@@ -62,4 +67,47 @@
     // background-color: #ff531f;
     background-color: rgb(189, 145, 49);
     transition: var(--transition);
+}
+
+.change {
+    // width: 100px;
+    display: block;
+    color: black;
+    background-color: red;
+}
+
+.logo {
+    width: 100vw;
+    padding-left: 3rem;
+    padding-top: 0rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logoImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: auto;
+    padding: 15px 25px;
+    background-color: white;
+    // height: 80px;
+    border-radius: 50%;
+    border: $color-yellow solid 1px;
+    opacity: 0.6;
+    transition: $transition;
+}
+
+.logoImg:hover {
+    background-color: $color-yellow;
+    transition: $transition;
+}
+
+.change {
+    // width: 100px;
+    display: block;
+    color: black;
+    background-color: red;
 }

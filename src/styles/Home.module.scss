@@ -93,12 +93,30 @@
 
 }
 
-.logo {
-  width: 100vw;
-  padding-left: 1rem;
-  padding-top: 0.5rem;
+// .logo {
+//   width: 100vw;
+//   padding-left: 3rem;
+//   padding-top: 5rem;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
 
-}
+// }
+
+// .logoImg {
+//   // display: block;
+//   padding: 10px;
+//   background-color: white;
+//   height: 80px;
+//   border-radius: 50%;
+//   border: $color-yellow solid 1px;
+//   opacity: 0.6;
+//   transition: $transition;
+// }
+// .logoImg:hover {
+//   background-color: $color-yellow;
+//   transition: $transition;
+// }
 
 .scale-up-center {
   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;

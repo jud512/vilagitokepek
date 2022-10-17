@@ -15,6 +15,7 @@ import { search, mapImageResources, getFolders } from '@lib/cloudinary';
 import {data} from '../data/data-topics' //topics for images
 import Footer from '@components/Footer';
 import Modal from '@components/modal/Modal';
+import Navbar from '@components/navbar/Navbar';
 
 export default function Home({images: defaultImages, nextCursor: defaultNextCursor, folders}) {
   const [images, setImages] = useState(defaultImages);
@@ -45,9 +46,10 @@ export default function Home({images: defaultImages, nextCursor: defaultNextCurs
       <div div className={styles.mainContainer}>
         
         <Hero>  
-            <div className={styles.logo}>
-                <a href="#"><Image src={logo} alt="Logo" width={150} height={50}/></a> 
-            </div>             
+            {/* <div className={styles.logo}>
+                <a href="#" className={styles.logoImg}><Image src={logo} alt="Logo" width={150} height={50}/></a> 
+                <Navbar />
+            </div>              */}
             <Banner>                
             </Banner>
         </Hero>
