@@ -6,10 +6,10 @@ import img4 from '../assets/images-topics/img4.jpg'
 
 export const data = [
     {
-        id: 1, 
+        id: 'Általános', 
         img: img1,
-        topic: 'topic1',
-        title: 'Világító faliképek',
+        topic: 'altalanos',
+        title: 'Általános',
         text: 'Világító faliképek galériája. Egyedi megrendelések és készletről, online megvásárolható képek.'
     },
     {

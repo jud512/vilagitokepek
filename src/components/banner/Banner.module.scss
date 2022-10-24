@@ -1,15 +1,26 @@
 @import "@styles/settings/__settings";
 
 .banner {
-    display: inline-block;
-    text-align: center;
+    // display: inline-block;
+    // text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     padding: 2rem 1rem;
-    width: 100vw;
-  
+    width: 100%;
+    height: 100vh;
     // background-color: #3f273f;
     // min-height: 100vh;
     opacity: 0.9;
 
+}
+
+.bannerTop{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .banner h1,
@@ -19,7 +30,14 @@
     font-family: $font-banner;
 }
 
-.banner h1 {
+.greeting {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.greeting h1 {
     font-size: 6rem;
     letter-spacing: 3px;
     /* text-shadow: 5px 3px #333; */
@@ -28,7 +46,7 @@
    letter-spacing: 10px;
    font-weight: 100;
    font-family: $font-banner-second-row;
-   margin-top: 10rem;
+   margin-bottom: 20px;
    
 }
 
@@ -44,40 +62,40 @@
     color:white;
 }
 
-.banner p {
-    color: #eee;
-    padding: 0.8rem;
-    text-transform: uppercase;
-    width: 12rem;
-    margin: auto;
-    margin-top: 3rem;
-    border-radius: 5px;
-    border: #eee solid 2px;
-    // text-shadow: 5px 3px #333;
-    background-color: transparent;
-    font-size: 1rem;
-    transition: var(--transition);
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-family: $font-banner;
-}
+// .banner p {
+//     color: #eee;
+//     padding: 0.8rem;
+//     text-transform: uppercase;
+//     width: 12rem;
+//     margin: auto;
+//     margin-top: 3rem;
+//     border-radius: 5px;
+//     border: #eee solid 2px;
+//     // text-shadow: 5px 3px #333;
+//     background-color: transparent;
+//     font-size: 1rem;
+//     transition: var(--transition);
+//     font-weight: 600;
+//     letter-spacing: 2px;
+//     font-family: $font-banner;
+// }
 
-.banner p:hover {
-    // background-color: #d79233;
-    // background-color: #ff531f;
-    background-color: rgb(189, 145, 49);
-    transition: var(--transition);
-}
+// .banner p:hover {
+//     // background-color: #d79233;
+//     // background-color: #ff531f;
+//     background-color: rgb(189, 145, 49);
+//     transition: var(--transition);
+// }
 
-.change {
-    // width: 100px;
-    display: block;
-    color: black;
-    background-color: red;
-}
+// .change {
+//     // width: 100px;
+//     display: block;
+//     color: black;
+//     background-color: red;
+// }
 
 .logo {
-    width: 100vw;
+    width: 100%;
     padding-left: 3rem;
     padding-top: 0rem;
     display: flex;
@@ -110,4 +128,34 @@
     display: block;
     color: black;
     background-color: red;
+}
+
+@media screen and (max-width:'1250px') {
+    .banner h1 {
+        font-size: 4rem;
+    }
+
+    .banner h2 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:'750px') {
+    .banner h1 {
+            font-size: 3rem;
+        }
+    
+        .banner h2 {
+            font-size: 0.8rem;
+        }
+}
+
+@media screen  and (max-width:'650px'){
+    .banner {
+        padding: 0.5rem;
+        text-align: center;
+    }
+    .logo {
+        display: none;
+    }
 }
