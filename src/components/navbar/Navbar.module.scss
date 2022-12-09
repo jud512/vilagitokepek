@@ -7,17 +7,26 @@
     display: flex;
 }
 .navbar > div {
-    padding: 5px 15px;
-    margin: 20px;
-    
-    background-color: transparent;
+    padding: 10px 25px;
+    margin: 20px;    
+    background-color: rgba(150,
+        98,
+        13, 0.8);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
     border-radius: 30px;
     border: $color-yellow solid 1px;
     cursor: pointer;
     transition: $transition;
+    border: none;
+    letter-spacing: 1px;
 }
 
 .navbar > div:hover {
-    background-color: $color-yellow;
+    background-color: rgb(150,
+        98,
+        13);
     transition: $transition;
+    color: white;
 }
