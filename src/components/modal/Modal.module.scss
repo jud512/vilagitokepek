@@ -7,7 +7,8 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(27, 27, 27, 0.841);
+    // background: rgba(27, 27, 27, 0.841);
+    background: rgb(0, 0, 0);
     display: flex;
     align-items: center;
 }
@@ -18,7 +19,7 @@
 }
 
 .closeBtn:hover {
-    color: $color-arrow-hover;
+    // color: $color-arrow-hover;
     transition: $transition;
 }
 
@@ -34,16 +35,32 @@
 .overlayArrowLeft,
 .overlayArrowRight {
     color: $color-arrow;
-    font-size: 3rem;
-    width: 20%;
+    font-size: 2rem;
+    // width: 20%;
+    min-width: 10%;
+    height: 100%;
     cursor: pointer;
     transition: $transition;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    z-index: 999;
     
+}
+
+.overlayArrowLeft{
+    left: 10px;
+}
+
+.overlayArrowRight{
+    right: 10px;
 }
 
 .overlayArrowRight:hover,
 .overlayArrowLeft:hover {
-    color: $color-arrow-hover;
+    // color: $color-arrow-hover;
     transition: $transition;
 }
 
@@ -56,10 +73,12 @@
     margin: 60px auto;
     // box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5); 
     position: relative;
-    width: 70%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     text-align: center;
-    background-color: rgba(91, 80, 80, 0.841);    
+    // background-color: rgba(91, 80, 80, 0.841);   
+    background: black;
+
     
 }
 
@@ -68,19 +87,24 @@
 .imgTitle {
     color: white;
     width: 100%;
-    line-height: 3rem;
+    // line-height: 3rem;
     margin: auto;
-    background-color: rgba(35, 31, 31, 0.9);
+    // background-color: rgba(35, 31, 31, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     position: absolute;
-    bottom: -3rem;
+    bottom: 0;
     // left: 42px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
 .modalContainer>span {
     position: absolute;
-    top: 50px;
-    right: 50px;
+    top: 10px;
+    right: 10px;
     font-size: 30px;
     color: #ffffff;
     z-index: 999;
@@ -88,10 +112,58 @@
     
 }
 .modalContainer {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+    .img{
+        width: 100%;
+        height: 100%;
+    }
+
+   
+    .overlayArrowLeft, .overlayArrowRight{
+        font-size: 1rem;
+        
+        
+    }
+
+        .overlayArrowLeft:hover
+       
+        {
+            
+            
+    
+        }
+        .overlayArrowLeft {
+            left: 2px;
+            
+        }
+    
+        .overlayArrowRight {
+            right: 2px;
+            
+        }
+
+        .overlayArrowLeft>div, 
+        .overlayArrowRight>div {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(128, 128, 128, 0.772);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            
+        }
+        
+        
 }
