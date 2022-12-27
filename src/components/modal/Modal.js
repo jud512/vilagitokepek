@@ -73,7 +73,7 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
 
           <div className={styles.overlayArrowRight}>
             <div onClick={handleRight}>
-              <IoIosArrowForward />{" "}
+              <IoIosArrowForward />
             </div>
           </div>
         </div>
