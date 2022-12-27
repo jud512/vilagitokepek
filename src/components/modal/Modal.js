@@ -55,8 +55,8 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
           <span className={styles.closeBtn}>
             <AiOutlineClose onClick={handleClose} />
           </span>
-          <div className={styles.overlayArrowLeft} onClick={handleLeft}>
-            <div>
+          <div className={styles.overlayArrowLeft}>
+            <div onClick={handleLeft}>
               <IoIosArrowBack />{" "}
             </div>
           </div>
@@ -71,8 +71,8 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
             <div className={styles.imgTitle}>{currentImage.filename}</div>
           </div>
 
-          <div className={styles.overlayArrowRight} onClick={handleRight}>
-            <div>
+          <div className={styles.overlayArrowRight}>
+            <div onClick={handleRight}>
               <IoIosArrowForward />{" "}
             </div>
           </div>
