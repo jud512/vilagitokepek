@@ -11,6 +11,32 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
     images.findIndex((image) => image.id === clickedImg.id)
   );
   const [currentImage, setCurrentImage] = useState(clickedImg);
+  const [touchPosition, setTouchPosition] = useState(null);
+
+  const handleTouchStart = (e) => {
+    const touchDown = e.touches[0].clientX;
+    setTouchPosition(touchDown);
+  };
+
+  const handleTouchMove = (e) => {
+    const touchDown = touchPosition;
+    if (touchDown === null) {
+      return;
+    }
+
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchDown - currentTouch;
+
+    if (diff > 5) {
+      handleRight();
+    }
+
+    if (diff < -5) {
+      handleLeft();
+    }
+
+    setTouchPosition(null);
+  };
 
   const handleClose = (e) => {
     setClickedImg(null);
@@ -61,7 +87,12 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
             </div>
           </div>
           <div></div>
-          <div className={styles.img}>
+
+          <div
+            className={styles.img}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+          >
             <Image
               src={currentImage ? currentImage.image : image}
               alt="kép"
