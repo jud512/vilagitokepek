@@ -10,7 +10,6 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
   const [currentIndex, setCurrentIndex] = useState(
     images.findIndex((image) => image.id === clickedImg.id)
   );
-
   const [prevIndex, setPrevIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState(0);
 
@@ -106,23 +105,66 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
           <div></div>
 
           <div
-            className={styles.img}
+            className={styles.imagesContainer}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
+            style={{
+              translate: `${-currentIndex * 100}vw`,
+              width: `${images.length * 100}vw`,
+            }}
           >
-            <Image
-              src={currentImage ? images[prevIndex].image : image}
-              alt="kép"
-              layout="fill"
-              objectFit="contain"
-              className={styles.imgPrev}
-            />
-            <Image
+            {/* <div className={styles.imgContainer}>
+              <div className={styles.imgItems}>
+                <img
+                  src={currentImage ? images[prevIndex].image : image}
+                  alt="kép"
+                  className={styles.img}
+                />
+                <div className={styles.imgTitle}>
+                  {images[prevIndex].filename}
+                </div>
+              </div>
+            </div> */}
+            {images.map((item) => (
+              <div className={styles.imgContainer}>
+                <div className={styles.imgItems}>
+                  <img
+                    src={item ? item.image : image}
+                    alt="kép"
+                    className={styles.img}
+                  />
+                  <div className={styles.imgTitle}>{item.filename}</div>
+                </div>
+              </div>
+            ))}
+
+            {/* 
+            <div className={styles.imgContainer}>
+                  <img
+                    src={currentImage ? currentImage.image : image}
+                    alt="kép"
+                    className={styles.img}
+                  />
+                  <div className={styles.imgTitle}>{currentImage.filename}</div>
+                </div>
+            <div className={styles.imgContainer}>
+              <img
+                src={currentImage ? images[nextIndex].image : image}
+                alt="kép"
+                className={styles.img}
+              />
+              <div className={styles.imgTitle}>
+                {images[nextIndex].filename}
+              </div>
+            </div> */}
+
+            {/* <Image
               src={currentImage ? currentImage.image : image}
               alt="kép"
               layout="fill"
               objectFit="contain"
               className={styles.images}
+              style="position: relative"
             />
             <Image
               src={currentImage ? images[nextIndex].image : image}
@@ -130,8 +172,8 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
               layout="fill"
               objectFit="contain"
               className={styles.imgNext}
-            />
-            <div className={styles.imgTitle}>{currentImage.filename}</div>
+              style="position: relative"
+            /> */}
           </div>
 
           <div className={styles.overlayArrowRight}>
