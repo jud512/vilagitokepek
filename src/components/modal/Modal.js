@@ -10,21 +10,21 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
   const [currentIndex, setCurrentIndex] = useState(
     images.findIndex((image) => image.id === clickedImg.id)
   );
-  const [prevIndex, setPrevIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState(0);
+  // const [prevIndex, setPrevIndex] = useState(0);
+  // const [nextIndex, setNextIndex] = useState(0);
 
-  useEffect(() => {
-    if (currentIndex === 0) {
-      setPrevIndex(images.length - 1);
-      setNextIndex(currentIndex + 1);
-    } else if (currentIndex === images.length - 1) {
-      setPrevIndex(currentIndex - 1);
-      setNextIndex(0);
-    } else {
-      setPrevIndex(currentIndex - 1);
-      setNextIndex(currentIndex + 1);
-    }
-  }, [currentIndex]);
+  // useEffect(() => {
+  //   if (currentIndex === 0) {
+  //     setPrevIndex(images.length - 1);
+  //     setNextIndex(currentIndex + 1);
+  //   } else if (currentIndex === images.length - 1) {
+  //     setPrevIndex(currentIndex - 1);
+  //     setNextIndex(0);
+  //   } else {
+  //     setPrevIndex(currentIndex - 1);
+  //     setNextIndex(currentIndex + 1);
+  //   }
+  // }, [currentIndex]);
 
   const [currentImage, setCurrentImage] = useState(clickedImg);
   const [touchPosition, setTouchPosition] = useState(null);
@@ -126,7 +126,7 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
               </div>
             </div> */}
             {images.map((item) => (
-              <div className={styles.imgContainer}>
+              <div key={item.id} className={styles.imgContainer}>
                 <div className={styles.imgItems}>
                   <img
                     src={item ? item.image : image}
