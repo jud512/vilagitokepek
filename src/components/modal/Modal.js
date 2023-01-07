@@ -10,6 +10,23 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
   const [currentIndex, setCurrentIndex] = useState(
     images.findIndex((image) => image.id === clickedImg.id)
   );
+
+  const [prevIndex, setPrevIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex === 0) {
+      setPrevIndex(images.length - 1);
+      setNextIndex(currentIndex + 1);
+    } else if (currentIndex === images.length - 1) {
+      setPrevIndex(currentIndex - 1);
+      setNextIndex(0);
+    } else {
+      setPrevIndex(currentIndex - 1);
+      setNextIndex(currentIndex + 1);
+    }
+  }, [currentIndex]);
+
   const [currentImage, setCurrentImage] = useState(clickedImg);
   const [touchPosition, setTouchPosition] = useState(null);
 
@@ -94,10 +111,25 @@ const Modal = ({ images, clickedImg, setClickedImg }) => {
             onTouchMove={handleTouchMove}
           >
             <Image
+              src={currentImage ? images[prevIndex].image : image}
+              alt="kép"
+              layout="fill"
+              objectFit="contain"
+              className={styles.imgPrev}
+            />
+            <Image
               src={currentImage ? currentImage.image : image}
               alt="kép"
               layout="fill"
               objectFit="contain"
+              className={styles.images}
+            />
+            <Image
+              src={currentImage ? images[nextIndex].image : image}
+              alt="kép"
+              layout="fill"
+              objectFit="contain"
+              className={styles.imgNext}
             />
             <div className={styles.imgTitle}>{currentImage.filename}</div>
           </div>

@@ -65,7 +65,7 @@
 }
 
 .img {
-    display: block;
+    display: flex;
     // max-width: 60%;
     // max-height: 80%;
     // width: 70%;
@@ -80,6 +80,19 @@
     background: black;
 
     
+}
+
+.img > .images{
+    display: block;
+    position: relative;
+}
+
+.imgPrev{
+    translate: -100vw;
+}
+
+.imgNext{
+    translate: 100vw;
 }
 
 
